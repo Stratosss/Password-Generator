@@ -55,7 +55,7 @@ button2 =Button(master= frame, text = "Exit", command = root.destroy, font=("Gar
 button2.pack(side= RIGHT, padx= 15, pady=20)
 
 frame_b = Frame(root)
-signature = Label(text="Created by Stratos Gialouris", bg="#FFA07A", font=("Garamond", 12, "bold", "italic"))
+signature = Label(text="Created by Stratos", bg="#FFA07A", font=("Garamond", 12, "bold", "italic"))
 
 frame.pack()
 frame_b.pack(side=BOTTOM, fill=X)
