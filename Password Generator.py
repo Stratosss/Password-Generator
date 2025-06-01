@@ -61,7 +61,7 @@ root = Tk()
 frame = Frame(root, bg="#FFA07A")
 root.resizable(width=False, height=False)
 
-root.geometry("350x200")
+root.geometry("400x250")
 root.configure(bg="#FFA07A")
 root.title("Password Generator")
 
