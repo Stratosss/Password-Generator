@@ -32,12 +32,36 @@ def password_generator(length):
     pyperclip.copy(password_final)
     messagebox.showinfo("Information", f'password: {password_final} was copied to clipboard')
     
-    
+def toggle_theme():
+    current_bg = frame.cget("bg")
+    if current_bg == "#FFA07A":
+        new_bg = "#2E2E2E"
+        text_color = "#FFFFFF"
+        entry_bg = "#3C3C3C"
+        entry_fg = "#FFFFFF"
+        button_fg = "#FFFFFF"
+    else:
+        new_bg = "#FFA07A"
+        text_color = "#000000"
+        entry_bg = "white"
+        entry_fg = "black"
+        button_fg = "#000000"
+
+    root.configure(bg=new_bg)
+    frame.configure(bg=new_bg)
+    frame_b.configure(bg=new_bg)
+    description_label.configure(bg=new_bg, fg=text_color)
+    my_entry.configure(bg=entry_bg, fg=entry_fg, insertbackground=entry_fg)
+    button1.configure(bg=new_bg, fg=button_fg)
+    button2.configure(bg=new_bg, fg="red")
+    signature.configure(bg=new_bg, fg=text_color)
+    theme_button.configure(bg=new_bg, fg=text_color)
+
 root = Tk()
 frame = Frame(root, bg="#FFA07A")
 root.resizable(width=False, height=False)
 
-root.geometry("350x200")
+root.geometry("400x250")
 root.configure(bg="#FFA07A")
 root.title("Password Generator")
 
@@ -53,6 +77,9 @@ button1.pack(side= LEFT, padx= 15, pady=20)
 
 button2 =Button(master= frame, text = "Exit", command = root.destroy, font=("Garamond", 12, "bold"), fg="red")
 button2.pack(side= RIGHT, padx= 15, pady=20)
+
+theme_button = Button(master= frame, text = "Toggle Theme", command = toggle_theme, font=("Garamond", 12, "bold"))
+theme_button.pack(pady=5)
 
 frame_b = Frame(root)
 signature = Label(text="Created by Stratos", bg="#FFA07A", font=("Garamond", 12, "bold", "italic"))
