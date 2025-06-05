@@ -26,7 +26,7 @@ def password_generator(length):
     all_lists = capital + lowercase + numbers + symbols
     for i in range(length):
         temp = random.choice(all_lists)
-        temp_to_string = password.join(str(x) for x in temp)
+        temp_to_string = password.join(str(temp))
         password_final= password_final + temp_to_string
         
     pyperclip.copy(password_final)
